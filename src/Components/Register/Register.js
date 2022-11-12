@@ -1,13 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Register = () => {
     const {register, updateUserNameImg} = useContext(AuthContext);
-
+    const [loading, setLoading] = useState(false);
+    if (loading) {
+        return <button className='btn loading flex mx-auto'></button>
+    }
     const handleRegister = event => {
         event.preventDefault();
+        setLoading(true)
         const form = event.target;
         const name = form.name.value;
         const photoURL = form.photoURL.value;
@@ -15,24 +19,29 @@ const Register = () => {
         const password = form.password.value;
 
         const profile = {
-            displyaName: name,
+            displayName: name,
             photoURL: photoURL
         }
 
         register(email, password)
         .then(res => {
             const user = res.user;
+            setLoading(false)
             toast.success('Registered')
             console.log(user);
-        })
-        .catch(err => console.error(err));
 
-        updateUserNameImg(profile)
-        .then(res => console.log(res))
-        .catch(err => console.error(err));
+            updateUserNameImg(profile)
+            .then(res => console.log(res))
+            .catch(err => console.error(err));
+        })
+        .catch(err => {
+            console.error(err)
+            setLoading(false)
+            toast.error(err.message)
+        });
     }
     return (
-        <div className='w-2/5 mt-5 mx-auto'>
+        <div className='lg:w-2/5 mt-5 mx-auto p-4'>
             <div>
         <form action="" onSubmit={handleRegister} className="text-center flex flex-col">
           <input
@@ -69,11 +78,6 @@ const Register = () => {
             <Link className="btn" to="/login">Login</Link>
         </div>
         <div className="border-2 border-b-indigo-500  mx-auto mt-4"></div>
-      </div>
-      <div className="mt-4 flex justify-around items-center">
-        <Link className="btn">Continue With Github</Link>
-        <p className="ml-2 mr-2">OR</p>
-        <Link className="btn">Continue with Google</Link>
       </div>
         </div>
     );

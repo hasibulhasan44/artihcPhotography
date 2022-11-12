@@ -43,13 +43,22 @@ const Header = () => {
               <li tabIndex={0}>
                 <Link to="/services">Services</Link>
               </li>
+              {user?.uid?
+              <div className="flex flex-col">
+                <li><Link to='/myReviews'>My Reviews</Link></li>
+                <li><Link to='/addService'>Add Service</Link></li>
+              </div>
+              :
+              <>
+              </>
+            }
               <li>
                 <Link to="/blog">Blog</Link>
               </li>
             </ul>
           </div>
           <Link to="/" className="flex">
-            <img className="w-12 rounded-full" src={img} alt="" />
+            <img className="w-12 rounded-full hidden lg:flex" src={img} alt="" />
             <Link to="/"
               className="btn btn-ghost normal-case text-xl text-white"
             >
@@ -65,6 +74,15 @@ const Header = () => {
             <li tabIndex={0}>
               <Link to="/services">Services</Link>
             </li>
+            {user?.uid?
+              <div className="flex items-center">
+                <li><Link to='/myReviews'>My Reviews</Link></li>
+                <li><Link to='/addService'>Add Service</Link></li>
+              </div>
+              :
+              <>
+              </>
+            }
             <li>
               <Link to="/blog">Blog</Link>
             </li>
@@ -74,7 +92,7 @@ const Header = () => {
           {user?.uid ?
           <>
           <p className="text-white mr-3">{user?.email}</p>
-          <Link to="" onClick={handleLogOut} className="btn">
+          <Link onClick={handleLogOut} className="btn">
           Log Out
         </Link>
           </>

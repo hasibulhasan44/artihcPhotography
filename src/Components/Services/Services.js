@@ -3,21 +3,30 @@ import SingleService from '../SingleService/SingleService';
 
 const Services = () => {
     const [services, setServices] = useState([]);
+    const [loading, setLoading] = useState(true)
     useEffect(()=>{
         fetch('http://localhost:5000/services')
         .then(res => res.json())
-        .then(data => setServices(data))
+        .then(data => {
+            setServices(data)
+            setLoading(false)
+        })
     },[])
 
+    if (loading) {
+        return <button className='btn loading flex mx-auto'></button>
+    }
     return (
-        <div className='lg:grid lg:grid-cols-3 grid grid-cols-1 gap-4'>
+      <div>
+            <div className='lg:grid lg:grid-cols-3 grid grid-cols-1 gap-4'>
             {
                 services.map(service => <SingleService
                 key = {service._id}
                 service = {service}
                 ></SingleService>)
             }
-        </div>
+            </div>
+      </div>  
     );
 };
 

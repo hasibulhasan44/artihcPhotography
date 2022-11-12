@@ -2,51 +2,51 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="w-11/12 mx-auto">
+    <div className="w-11/12 mx-auto bg-gray-200 p-4 rounded-xl mt-4">
       <div className="mt-4">
         <h1 className="text-xl">1. Difference between SQL and NoSQL:</h1>
         <div className=" flex justify-center">
           <table className="mt-4">
             <tr>
-              <th className="border-4">SQL</th>
-              <th className="border-4">NoSQL</th>
+              <th className="border-4 border-slate-400">SQL</th>
+              <th className="border-4 border-slate-400">NoSQL</th>
             </tr>
             <tr>
-              <td className="border-4 p-4">1. SQL databases are relational</td>
-              <td className="border-4 p-4">
+              <td className="border-4 border-slate-400 p-4">1. SQL databases are relational</td>
+              <td className="border-4 border-slate-400 p-4">
                 1. NoSQL databases are non-relational
               </td>
             </tr>
             <tr>
-              <td className="border-4 p-4">
+              <td className="border-4 border-slate-400 p-4">
                 {" "}
                 2. SQL databases use structured query language and have a
                 predefined schema
               </td>
-              <td className="border-4">
+              <td className="border-4 border-slate-400">
                 2. NoSQL databases have dynamic schemas for unstructured data
               </td>
             </tr>
             <tr>
-              <td className="border-4 p-4">
+              <td className="border-4 border-slate-400 p-4">
                 3. SQL databases are vertically scalable
               </td>
-              <td className="border-4 p-4">
+              <td className="border-4 border-slate-400 p-4">
                 3. NoSQL databases are horizontally scalable
               </td>
             </tr>
             <tr>
-              <td className="border-4 p-4">4. SQL databases are table-based</td>
-              <td className="border-4 p-4">
+              <td className="border-4 border-slate-400 p-4">4. SQL databases are table-based</td>
+              <td className="border-4 border-slate-400 p-4">
                 4. NoSQL databases are document, key-value, graph, or
                 wide-column stores
               </td>
             </tr>
             <tr>
-              <td className="border-4 p-4">
+              <td className="border-4 border-slate-400 p-4">
                 5. SQL databases are better for multi-row transactions
               </td>
-              <td className="border-4 p-4">
+              <td className="border-4 border-slate-400 p-4">
                 5. NoSQL is better for unstructured data like documents or JSON
               </td>
             </tr>
@@ -98,69 +98,69 @@ const Blog = () => {
         </h1>
         <table className="mt-4">
           <tr>
-            <th className="border-4">Javascript</th>
-            <th className="border-4">Node JS</th>
+            <th className="border-4 border-slate-400">Javascript</th>
+            <th className="border-4 border-slate-400">Node JS</th>
           </tr>
           <tr>
-            <td className="border-4 p-4">
+            <td className="border-4 border-slate-400 p-4">
               1. It is an accessible, bridge, parsed, lightweight, reactive, and
               web apps programming language.
             </td>
-            <td className="border-4 p-4">
+            <td className="border-4 border-slate-400 p-4">
               1. It's a bridge, open-source Js runtime environment for executing
               Js on the server.
             </td>
           </tr>
           <tr>
-            <td className="border-4 p-4">
+            <td className="border-4 border-slate-400 p-4">
               {" "}
               2. It's a programming language, after all. Any browser with a
               competent browser engine will operate.
             </td>
-            <td className="border-4">
+            <td className="border-4 border-slate-400">
               2. It's a JavaScript translator and environment that includes some
               valuable libraries for JavaScript programming.
             </td>
           </tr>
           <tr>
-            <td className="border-4 p-4">
+            <td className="border-4 border-slate-400 p-4">
               3. It's most commonly used on client-side servers.
             </td>
-            <td className="border-4 p-4">
+            <td className="border-4 border-slate-400 p-4">
               3. It's mainly popular on the server-side.
             </td>
           </tr>
           <tr>
-            <td className="border-4 p-4">
+            <td className="border-4 border-slate-400 p-4">
               4. The node community does not care about JavaScript.
             </td>
-            <td className="border-4 p-4">
+            <td className="border-4 border-slate-400 p-4">
               4. All node projects represent the JavaScript community.
             </td>
           </tr>
           <tr>
-            <td className="border-4 p-4">
+            <td className="border-4 border-slate-400 p-4">
               5. It's made for creating network-centric apps.
             </td>
-            <td className="border-4 p-4">
+            <td className="border-4 border-slate-400 p-4">
               5. It's made for real-time data-intensive apps that run on
               multiple platforms.
             </td>
           </tr>
           <tr>
-            <td className="border-4 p-4">
+            <td className="border-4 border-slate-400 p-4">
               6. It's a new release of the ECMA script that works on the
               C++-based V8 engine.
             </td>
-            <td className="border-4 p-4">
+            <td className="border-4 border-slate-400 p-4">
               6. C++, C, and JavaScript are used.
             </td>
           </tr>
           <tr>
-            <td className="border-4 p-4">
+            <td className="border-4 border-slate-400 p-4">
               7. TypedJS, RamdaJS, and other JavaScript frameworks are examples.
             </td>
-            <td className="border-4 p-4">
+            <td className="border-4 border-slate-400 p-4">
               7. Nodejs modules include Lodash and Express. All of these modules
               must be imported from npm.
             </td>

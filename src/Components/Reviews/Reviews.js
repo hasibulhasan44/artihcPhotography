@@ -9,14 +9,14 @@ import SingleReview from "./SingleReview/SingleReview";
 const Reviews = (props) => {
   const { user } = useContext(AuthContext);
   const [reviews, setReviews] = useState([]);
-  const { _id, name } = props.service;
-
+  const { _id, name } = props.service[0];
+  const [reFetch, setReFetch] = useState(false);
   const location = useLocation();
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?id=${_id}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
-  }, [_id, reviews]);
+  }, [_id, reFetch]);
 
   const handleAddReview = (event) => {
     event.preventDefault();
@@ -50,6 +50,7 @@ const Reviews = (props) => {
         form.reset();
         if (data.acknowledged === true) {
           toast.success("review added");
+          setReFetch(true);
         }
       })
       .catch((err) => console.error(err));
@@ -79,13 +80,17 @@ const Reviews = (props) => {
                 <span className="label-text">Add a review</span>
               </label>
               {user?.uid ? (
-                <textarea
+                <>
+                    <textarea
                   type="text"
                   placeholder="Write a meaningful review. It can really help us to improve!"
                   className="textarea textarea-bordered w-full max-w-xs"
                   disabled={false}
                   name="message"
                 />
+                <button className="btn btn-primary mt-4">Submit
+                </button>
+                </>
               ) : (
                 <>
                   <p className="mb-2">

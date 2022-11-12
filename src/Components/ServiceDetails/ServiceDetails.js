@@ -13,7 +13,7 @@ const ServiceDetails = () => {
   const { img, name, price, ratings, facilities, description } = data[0];
   return (
     <div>
-      <div className="lg:grid lg:grid-cols-3 ml-8">
+      <div className="lg:grid lg:grid-cols-3 lg:ml-8">
         <div className="col-span-2">
           <PhotoProvider>
             <PhotoView src={img}>
@@ -21,7 +21,7 @@ const ServiceDetails = () => {
             </PhotoView>
           </PhotoProvider>
           <div className="flex justify-between mx-auto w-4/5">
-            <h2 className="text-4xl font-bold mb-3">{name}</h2>
+            <h2 className="text-3xl font-bold mb-3">{name}</h2>
             <p>
               {ratings === 5 ? (
                 <span className="flex mt-3 items-center">

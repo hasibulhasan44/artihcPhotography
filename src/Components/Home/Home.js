@@ -1,9 +1,51 @@
 import React from "react";
+import img from "../../images/just-logo.png";
+import LineChartHome from "./LineChartHome/LineChartHome";
 
 const Home = () => {
   return (
     <div>
-      <h2>this is home</h2>
+      <div className="lg:flex lg:justify-between mt-4 bg-gray-300 p-4 rounded-lg items-center">
+        <img
+          className="lg:w-1/4 mb-4 border-2 border-slate-500 rounded-2xl mr-4"
+          src={img}
+          alt=""
+        />
+        <p className="text-xl">
+          ARTIHC is your best friend who can make your every moment memoriable.
+          Every event in your life is very precious to you, we know. We all want
+          that all the precious moments in our life should come again and again.
+          Though it is not possible in real world to bring the same event twice.
+          But it can remain fresh in your mind by just one click. And that CLICK
+          from ARTIHC can be your reminder to that event. We value our customers
+          and customers generate value for us. We can gurantee that you can not
+          find better service than us anywhere.
+        </p>
+      </div>
+      <div className="flex justify-center bg-gray-100 mt-8">
+          <div className="stats stats-vertical lg:stats-horizontal shadow">
+            <div className="stat">
+              <div className="stat-title">Total Customers</div>
+              <div className="stat-value">3K</div>
+              <div className="stat-desc">Jan 1st - Feb 1st</div>
+            </div>
+
+            <div className="stat">
+              <div className="stat-title">New Users</div>
+              <div className="stat-value">4,200</div>
+              <div className="stat-desc">↗︎ 400 (22%)</div>
+            </div>
+
+            <div className="stat">
+              <div className="stat-title">New Registers</div>
+              <div className="stat-value">1,200</div>
+              <div className="stat-desc">↘︎ 90 (14%)</div>
+            </div>
+          </div>
+      </div>
+      <div className="hidden lg:flex justify-center md:flex md:justify-center mt-8">
+        <LineChartHome></LineChartHome>
+      </div>
     </div>
   );
 };

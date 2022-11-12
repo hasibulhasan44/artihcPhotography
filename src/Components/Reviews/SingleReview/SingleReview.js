@@ -22,8 +22,8 @@ const SingleReview = (props) => {
           <small className="ml-5">{`${dateSliced}, ${hh}:${mm}`}</small>
         </div>
       </div>
-      <small className="leading-none ml-4">{email}</small>
-      <p className="ml-4">{`"${review}"`}</p>
+      <small className="ml-4">{email}</small>
+      <p className="ml-4 ">{`"${review}"`}</p>
     </div>
   );
 };
