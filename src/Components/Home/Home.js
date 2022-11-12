@@ -32,7 +32,7 @@ const Home = () => {
           find better service than us anywhere.
         </p>
       </div>
-      <div>
+      <div className="lg:grid lg:grid-cols-3 mdLgrid md:grid-cols-2 grid grid-cols-1">
           {
             services?.map(service => <SingleService
               key={service._id}
