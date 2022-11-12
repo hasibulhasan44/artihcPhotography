@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import img from "../../images/just-logo.png";
+import SingleService from "../SingleService/SingleService";
 import LineChartHome from "./LineChartHome/LineChartHome";
 
 const Home = () => {
   const [services, setServices] = useState([]);
 
+  useEffect(()=>{
+    fetch('http://localhost:5000/home/services')
+    .then(res => res.json())
+    .then(data => setServices(data))
+  },[])
 
   return (
     <div>
@@ -27,7 +33,12 @@ const Home = () => {
         </p>
       </div>
       <div>
-
+          {
+            services?.map(service => <SingleService
+              key={service._id}
+              service = {service}
+            ></SingleService>)
+          }
       </div>
       <div className="flex justify-center bg-gray-100 mt-8">
           <div className="stats stats-vertical lg:stats-horizontal shadow">
