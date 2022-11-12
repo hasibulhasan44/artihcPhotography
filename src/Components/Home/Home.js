@@ -21,16 +21,7 @@ const Home = () => {
           src={img}
           alt=""
         />
-        <p className="text-xl">
-          ARTIHC is your best friend who can make your every moment memoriable.
-          Every event in your life is very precious to you, we know. We all want
-          that all the precious moments in our life should come again and again.
-          Though it is not possible in real world to bring the same event twice.
-          But it can remain fresh in your mind by just one click. And that CLICK
-          from ARTIHC can be your reminder to that event. We value our customers
-          and customers generate value for us. We can gurantee that you can not
-          find better service than us anywhere.
-        </p>
+        
       </div>
       <div className="lg:grid lg:grid-cols-3 mdLgrid md:grid-cols-2 grid grid-cols-1">
         {services?.map((service) => (
