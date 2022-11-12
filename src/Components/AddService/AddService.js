@@ -1,7 +1,9 @@
 import React from "react";
 import { toast } from "react-toastify";
+import useTitleHook from "../../Hooks/UseTitle";
 
 const AddService = () => {
+  useTitleHook('Add Service')
   const addService = (event) => {
     event.preventDefault();
     const serviceName = event.target.serviceName.value;

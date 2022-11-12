@@ -2,8 +2,10 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Context/AuthProvider";
+import useTitleHook from "../../Hooks/UseTitle";
 
 const Register = () => {
+  useTitleHook('Register')
   const { register, updateUserNameImg } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();

@@ -5,10 +5,10 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 import Reviews from "../Reviews/Reviews";
-// import useTitleHook from "../../Hooks/useTitleHook";
+import useTitleHook from "../../Hooks/UseTitle";
 
 const ServiceDetails = () => {
-  //   useTitleHook("Service Details");
+    useTitleHook("Service Details");
   const data = useLoaderData();
   const { img, name, price, ratings, facilities, description } = data[0];
   return (

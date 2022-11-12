@@ -3,8 +3,10 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Context/AuthProvider";
+import useTitleHook from "../../Hooks/UseTitle";
 
 const Login = () => {
+  useTitleHook('Login')
   const { googleSignIn, logIn, githubSignIn } = useContext(AuthContext);
   const googleAuthProvider = new GoogleAuthProvider();
   const githubAuthProvider = new GithubAuthProvider();

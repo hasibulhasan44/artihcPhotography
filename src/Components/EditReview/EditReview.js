@@ -1,9 +1,11 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import { toast } from "react-toastify";
+import useTitleHook from "../../Hooks/UseTitle";
 
 const EditReview = () => {
+  useTitleHook('Edit-Review')
   const data = useLoaderData();
   const { name, email, img, review, serviceName, _id, dateTime } = data;
   const { date, hh, mm } = dateTime;

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import useTitleHook from "../../Hooks/UseTitle";
 import img from "../../images/just-logo.png";
 import SingleService from "../SingleService/SingleService";
 import LineChartHome from "./LineChartHome/LineChartHome";
 
 const Home = () => {
+  useTitleHook('Home')
   const [services, setServices] = useState([]);
 
   useEffect(() => {
@@ -37,6 +39,7 @@ const Home = () => {
           <SingleService key={service._id} service={service}></SingleService>
         ))}
       </div>
+      <Link to='/services' className="btn btn-primary mt-3 flex w-32 justify-center mx-auto">See All</Link>
       <div className="flex justify-center mt-8">
         <div className="stats stats-vertical lg:stats-horizontal shadow">
           <div className="stat">

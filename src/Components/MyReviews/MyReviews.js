@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Context/AuthProvider";
+import useTitleHook from "../../Hooks/UseTitle";
 import MyReviewSingle from "../MyReviewSingle/MyReviewSingle";
 
 const MyReviews = () => {
+  useTitleHook('My-Reviews')
   const [reviews, setReviews] = useState([]);
   // const {logOut} = useContext(AuthContext);
   const [reFetch, setReFetch] = useState(false);

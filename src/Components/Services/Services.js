@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import useTitleHook from "../../Hooks/UseTitle";
 import SingleService from "../SingleService/SingleService";
 
 const Services = () => {
+  useTitleHook('Services')
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
