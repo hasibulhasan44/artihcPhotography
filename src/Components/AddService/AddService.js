@@ -63,7 +63,7 @@ const AddService = () => {
           name="price"
         />
         <button className="btn mt-4" to="">
-          Register
+          Submit
         </button>
       </form>
     </div>

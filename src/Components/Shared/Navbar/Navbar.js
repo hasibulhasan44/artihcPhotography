@@ -111,7 +111,7 @@ const Header = () => {
                     alt=""
                   />
                 ) : (
-                  <FaUser></FaUser>
+                  <FaUser className="mr-4 text-white"></FaUser>
                 )}
               </>
               <Link onClick={handleLogOut} className="btn">
