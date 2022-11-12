@@ -10,11 +10,14 @@ const MyReviews = () => {
   const { user } = useContext(AuthContext);
   const { logOut } = useContext(AuthContext);
   useEffect(() => {
-    fetch(`http://localhost:5000/myReviews?email=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("artihcToken")}`,
-      },
-    })
+    fetch(
+      `https://artihc-photography-server.vercel.app/myReviews?email=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("artihcToken")}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           return logOut();
@@ -27,7 +30,7 @@ const MyReviews = () => {
   const handleDeleteReview = (id) => {
     const proceed = window.confirm("Delete this review?");
     if (proceed) {
-      fetch(`http://localhost:5000/myReviews/${id}`, {
+      fetch(`https://artihc-photography-server.vercel.app/myReviews/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -42,19 +45,19 @@ const MyReviews = () => {
 
   return (
     <div>
-      {reviews.length === 0?
-      <p className="text-center">You haven't reviewed any service.</p>
-      :
-      <div>
-        {reviews.map((review) => (
-          <MyReviewSingle
-            key={review._id}
-            review={review}
-            handleDeleteReview={() => handleDeleteReview(review._id)}
-          ></MyReviewSingle>
-        ))}
-      </div>
-      }
+      {reviews.length === 0 ? (
+        <p className="text-center">You haven't reviewed any service.</p>
+      ) : (
+        <div>
+          {reviews.map((review) => (
+            <MyReviewSingle
+              key={review._id}
+              review={review}
+              handleDeleteReview={() => handleDeleteReview(review._id)}
+            ></MyReviewSingle>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

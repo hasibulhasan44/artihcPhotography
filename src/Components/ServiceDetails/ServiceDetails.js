@@ -8,7 +8,7 @@ import Reviews from "../Reviews/Reviews";
 // import useTitleHook from "../../Hooks/useTitleHook";
 
 const ServiceDetails = () => {
-//   useTitleHook("Service Details");
+  //   useTitleHook("Service Details");
   const data = useLoaderData();
   const { img, name, price, ratings, facilities, description } = data[0];
   return (
@@ -29,8 +29,7 @@ const ServiceDetails = () => {
                   <FaStar />
                   <FaStar />
                   <FaStar />
-                  <FaStar /> =
-                  {ratings}
+                  <FaStar /> ={ratings}
                 </span>
               ) : (
                 <span className="flex mt-3 items-center">

@@ -12,7 +12,9 @@ const Blog = () => {
               <th className="border-4 border-slate-400">NoSQL</th>
             </tr>
             <tr>
-              <td className="border-4 border-slate-400 p-4">1. SQL databases are relational</td>
+              <td className="border-4 border-slate-400 p-4">
+                1. SQL databases are relational
+              </td>
               <td className="border-4 border-slate-400 p-4">
                 1. NoSQL databases are non-relational
               </td>
@@ -36,7 +38,9 @@ const Blog = () => {
               </td>
             </tr>
             <tr>
-              <td className="border-4 border-slate-400 p-4">4. SQL databases are table-based</td>
+              <td className="border-4 border-slate-400 p-4">
+                4. SQL databases are table-based
+              </td>
               <td className="border-4 border-slate-400 p-4">
                 4. NoSQL databases are document, key-value, graph, or
                 wide-column stores
@@ -168,11 +172,16 @@ const Blog = () => {
         </table>
       </div>
       <div className="mt-8 p-4 rounded-lg">
-        <h1 className="text-xl">4. How does NodeJS handle multiple requests at the same time?</h1>
+        <h1 className="text-xl">
+          4. How does NodeJS handle multiple requests at the same time?
+        </h1>
         <p>
-        NodeJS receives multiple client requests and places them into EventQueue. NodeJS is built with the concept of event-driven architecture. NodeJS has its own EventLoop which is an infinite loop that receives requests and processes them.
+          NodeJS receives multiple client requests and places them into
+          EventQueue. NodeJS is built with the concept of event-driven
+          architecture. NodeJS has its own EventLoop which is an infinite loop
+          that receives requests and processes them.
         </p>
-       </div> 
+      </div>
     </div>
   );
 };

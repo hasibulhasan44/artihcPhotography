@@ -13,7 +13,7 @@ const Reviews = (props) => {
   const [reFetch, setReFetch] = useState(false);
   const location = useLocation();
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?id=${_id}`)
+    fetch(`https://artihc-photography-server.vercel.app/reviews?id=${_id}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [_id, reFetch]);
@@ -37,7 +37,7 @@ const Reviews = (props) => {
       dateTime: { date, hh, mm },
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://artihc-photography-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -81,15 +81,14 @@ const Reviews = (props) => {
               </label>
               {user?.uid ? (
                 <>
-                    <textarea
-                  type="text"
-                  placeholder="Write a meaningful review. It can really help us to improve!"
-                  className="textarea textarea-bordered w-full max-w-xs"
-                  disabled={false}
-                  name="message"
-                />
-                <button className="btn btn-primary mt-4">Submit
-                </button>
+                  <textarea
+                    type="text"
+                    placeholder="Write a meaningful review. It can really help us to improve!"
+                    className="textarea textarea-bordered w-full max-w-xs"
+                    disabled={false}
+                    name="message"
+                  />
+                  <button className="btn btn-primary mt-4">Submit</button>
                 </>
               ) : (
                 <>
