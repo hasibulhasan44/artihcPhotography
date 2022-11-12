@@ -4,47 +4,41 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 const data = [
   {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
+    name: 'Wedding Photography',
+    Overall_rating: 4.8,
+    Success_ratio: 95,
     amt: 2400,
   },
   {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    name: 'Sports Photography',
+    Overall_rating: 4.5,
+    Success_ratio: 95,
+    amt: 0,
   },
   {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    name: 'Journalism Photography',
+    Overall_rating: 4.5,
+    Success_ratio: 98,
+    amt: 0,
   },
   {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    name: 'Wild Photography',
+    Overall_rating: 4.4,
+    Success_ratio: 92,
+    amt: 0,
   },
   {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
+    name: 'Family Photography',
+    Overall_rating: 4.8,
+    Success_ratio: 98,
+    amt: 0,
   },
   {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
+    name: 'Travel Photography',
+    Overall_rating: 4.9,
+    Success_ratio: 99,
+    amt: 0,
+  }
 ];
 
 
@@ -52,7 +46,7 @@ const LineChartHome = () => {
     return (
         <div>
         <LineChart
-          width={500}
+          width={1100}
           height={300}
           data={data}
           margin={{
@@ -67,8 +61,8 @@ const LineChartHome = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+          <Line type="monotone" dataKey="Success_ratio" stroke="#8884d8" activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="Overall_rating" stroke="#82ca9d" />
         </LineChart>
         </div>
     );

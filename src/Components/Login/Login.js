@@ -23,26 +23,26 @@ const Login = () => {
     logIn(email, password)
     .then(res => {
       const user = res.user
-      // const currentUser = {
-      //   email: user.email
-      // }
-      // //jwt token
-      // fetch("http://localhost:5000/jwt", {
-      //   method: "post",
-      //   headers: {
-      //     "content-type": "application/json",
-      //   },
-      //   body: JSON.stringify(currentUser),
-      // })
-      //   .then((res) => res.json())
-      //   .then((data) => {
-      //     console.log(data);
-      //     localStorage.setItem("artihcToken", data.token);
-      //   });
       setLoading(false)
       toast.success('Successfully logged in')
       console.log(user);
-      navigate(from, { replace: true });
+      // jwt token
+      const currentUser = {
+        email: user.email
+      }
+
+      fetch('http://localhost:5000/jwt',{
+        method:'POST',
+        headers:{
+          'content-type':'application/json'
+        },
+        body: JSON.stringify(currentUser)
+      })
+      .then(res => res.json())
+      .then(data => {
+        localStorage.setItem('artihcToken', data.token)
+        navigate(from, { replace: true });
+      })
     })
     .catch(err => {
       setLoading(false)
