@@ -17,7 +17,7 @@ const Footer = () => {
             you.
           </h1>
         </div>
-        <div className="mr-4">
+        <div className="mr-4 mb-3 lg:mb-0">
           <h2 className="text-md mb-4 text-center">Follow us On</h2>
           <div className="flex justify-evenly">
             <a target="_blank" rel="noreferrer" href="https://cutt.ly/RMtBS70">

@@ -58,7 +58,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <p className="text-lg w-9/12 mx-auto">Clients Response:</p>
+      <p className="text-lg w-9/12 mx-auto hidden lg:flex">Clients Response:</p>
       <div className="hidden lg:flex justify-center md:flex md:justify-center mt-8">
         <LineChartHome></LineChartHome>
       </div>
