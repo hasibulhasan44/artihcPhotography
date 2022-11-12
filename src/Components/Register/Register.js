@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Register = () => {
     const {register, updateUserNameImg} = useContext(AuthContext);
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate()
     if (loading) {
         return <button className='btn loading flex mx-auto'></button>
     }
@@ -33,6 +34,7 @@ const Register = () => {
             updateUserNameImg(profile)
             .then(res => console.log(res))
             .catch(err => console.error(err));
+            navigate('/')
         })
         .catch(err => {
             console.error(err)

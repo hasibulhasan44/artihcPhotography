@@ -40,7 +40,7 @@ const Home = () => {
             ></SingleService>)
           }
       </div>
-      <div className="flex justify-center bg-gray-100 mt-8">
+      <div className="flex justify-center mt-8">
           <div className="stats stats-vertical lg:stats-horizontal shadow">
             <div className="stat">
               <div className="stat-title">Total Customers</div>

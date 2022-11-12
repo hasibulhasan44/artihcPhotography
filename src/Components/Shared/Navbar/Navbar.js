@@ -1,16 +1,17 @@
 import React, { useContext } from "react";
+import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider";
 import img from "../../../images/LOGO.png";
 
 const Header = () => {
-  const {logOut, user} = useContext(AuthContext);
+  const { logOut, user } = useContext(AuthContext);
 
-  const handleLogOut =() =>{
+  const handleLogOut = () => {
     logOut()
-    .then(res => console.log(res))
-    .catch(err => console.error(err))
-  }
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
+  };
 
   return (
     <div>
@@ -43,23 +44,31 @@ const Header = () => {
               <li tabIndex={0}>
                 <Link to="/services">Services</Link>
               </li>
-              {user?.uid?
-              <div className="flex flex-col">
-                <li><Link to='/myReviews'>My Reviews</Link></li>
-                <li><Link to='/addService'>Add Service</Link></li>
-              </div>
-              :
-              <>
-              </>
-            }
+              {user?.uid ? (
+                <div className="flex flex-col">
+                  <li>
+                    <Link to="/myReviews">My Reviews</Link>
+                  </li>
+                  <li>
+                    <Link to="/addService">Add Service</Link>
+                  </li>
+                </div>
+              ) : (
+                <></>
+              )}
               <li>
                 <Link to="/blog">Blog</Link>
               </li>
             </ul>
           </div>
           <Link to="/" className="flex">
-            <img className="w-12 rounded-full hidden lg:flex" src={img} alt="" />
-            <Link to="/"
+            <img
+              className="w-12 rounded-full hidden lg:flex"
+              src={img}
+              alt=""
+            />
+            <Link
+              to="/"
               className="btn btn-ghost normal-case text-xl text-white"
             >
               ARTIHC
@@ -74,34 +83,46 @@ const Header = () => {
             <li tabIndex={0}>
               <Link to="/services">Services</Link>
             </li>
-            {user?.uid?
+            {user?.uid ? (
               <div className="flex items-center">
-                <li><Link to='/myReviews'>My Reviews</Link></li>
-                <li><Link to='/addService'>Add Service</Link></li>
+                <li>
+                  <Link to="/myReviews">My Reviews</Link>
+                </li>
+                <li>
+                  <Link to="/addService">Add Service</Link>
+                </li>
               </div>
-              :
-              <>
-              </>
-            }
+            ) : (
+              <></>
+            )}
             <li>
               <Link to="/blog">Blog</Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          {user?.uid ?
-          <>
-          <p className="text-white mr-3">{user?.email}</p>
-          <Link onClick={handleLogOut} className="btn">
-          Log Out
-        </Link>
-          </>
-        :
-        <Link to="/login" className="btn">
-            Login
-          </Link>
-
-          }
+          {user?.uid ? (
+            <>
+              <>
+                {user?.photoURL ? (
+                  <img
+                    className="w-10 rounded-full mr-4"
+                    src={user?.photoURL}
+                    alt=""
+                  />
+                ) : (
+                  <FaUser></FaUser>
+                )}
+              </>
+              <Link onClick={handleLogOut} className="btn">
+                Log Out
+              </Link>
+            </>
+          ) : (
+            <Link to="/login" className="btn">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>
