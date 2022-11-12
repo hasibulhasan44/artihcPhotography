@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import img from "../../images/just-logo.png";
 import LineChartHome from "./LineChartHome/LineChartHome";
 
 const Home = () => {
+  const [services, setServices] = useState([]);
+
+
   return (
     <div>
       <div className="lg:flex lg:justify-between mt-4 bg-gray-300 p-4 rounded-lg items-center">
@@ -21,6 +25,9 @@ const Home = () => {
           and customers generate value for us. We can gurantee that you can not
           find better service than us anywhere.
         </p>
+      </div>
+      <div>
+
       </div>
       <div className="flex justify-center bg-gray-100 mt-8">
           <div className="stats stats-vertical lg:stats-horizontal shadow">
